@@ -1,6 +1,6 @@
 # Spesifikasi dan Kebutuhan Perangkat Lunak (SKPL)
 **Proyek:** Landing Page UMKM Jasa Cuci Sepatu "KlinShoes"
-**Versi Dokumen:** 2.0
+**Versi Dokumen:** 1.0
 **Teknologi:** HTML5, Pure CSS3 (Tanpa Framework, Tanpa JavaScript)
 
 ---
