@@ -4,13 +4,13 @@
 
 ---
 
-## 📌 Tentang Proyek
+## Tentang Proyek
 
 **KlinShoes** adalah *landing page* promosi untuk usaha mikro, kecil, dan menengah (UMKM) jasa perawatan dan cuci sepatu di wilayah Depok. Website dirancang menggunakan pendekatan *Mobile-First*, mengutamakan kemudahan navigasi, transparansi harga, bukti portofolio *Before-After*, dan konversi pemesanan cepat via WhatsApp.
 
 ---
 
-## 📸 Preview Tampilan
+## Preview Tampilan
 
 | Desktop (1200px) | Mobile (390px) |
 |:---:|:---:|
@@ -20,7 +20,7 @@
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 - **Mobile-First & Responsif:** Tata letak fleksibel beradaptasi mulus dari ponsel pintar (320px) hingga monitor desktop (1200px+) menggunakan CSS Grid & Flexbox.
 - **Sticky Header Navigation:** Navigasi tetap melayang di atas layar dengan *smooth scroll* dan `scroll-padding-top` yang presisi.
@@ -32,7 +32,7 @@
 
 ---
 
-## 🎨 Palet Warna & Desain
+## Palet Warna & Desain
 
 - **Hero & Header:** Warm Cream (`#FAF7F0`)
 - **Konten Utama:** Sage Green Muda (`#E8F0E4`)
@@ -44,7 +44,7 @@
 
 ---
 
-## 📂 Struktur Berkas
+## Struktur Berkas
 
 ```
 Landing-UMKM/
@@ -68,7 +68,7 @@ Landing-UMKM/
 
 ---
 
-## 🚀 Cara Menjalankan Proyek
+## Cara Menjalankan Proyek
 
 Pilih salah satu cara di bawah ini untuk membuka website secara lokal:
 
@@ -84,11 +84,11 @@ python -m http.server 5500
 Buka peramban di URL: `http://localhost:5500`
 
 ### Cara 3: Langsung Buka di Browser
-Klik dua kali file `index.html` pada File Explorer untuk membukanya langsung di browser favorit Anda.
+Klik dua kali file `index.html` pada File Explorer untuk membukanya langsung di browser.
 
 ---
 
-## 👥 Informasi Akademik
+## Informasi Akademik
 
 - **Mata Kuliah:** Desain Web
 - **Dosen Pengampu:** Asep Kurniawan, S.Pd., M.Kom.
