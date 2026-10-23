@@ -48,3 +48,20 @@ Resolusi  : 320x800, 375x800, 480x800, 768x800, 1024x800, 1200x900
 Skenario  : Verifikasi integrasi layout baru (tanpa badge kawat), urutan navigasi (Keunggulan -> Layanan -> Galeri -> Kontak), palet warna Warm Cream, Sage Green, Terracotta, Forest Green, dan respon viewport.
 Hasil     : LULUS (Semua kriteria penerimaan terpenuhi).
 ```
+
+## Bukti Screenshot Hasil Pengujian
+
+### 1. Tampilan Desktop (1200px)
+Tampilan penuh layar desktop dengan layout grid 3 kolom pada seksi Keunggulan, Layanan, dan Statistik, serta 2 kolom pada Galeri dan Footer.
+
+![Tampilan Desktop](screenshots/desktop-view.png)
+
+### 2. Tampilan Tablet (768px)
+Tampilan adaptif pada layar tablet dengan penataan proporsional tanpa *overflow*.
+
+![Tampilan Tablet](screenshots/tablet-view.png)
+
+### 3. Tampilan Mobile (390px)
+Tampilan responsif *mobile-first* dengan tombol CTA lebar penuh, galeri 2-kolom berdampingan, dan footer 2-kolom ringkas.
+
+![Tampilan Mobile](screenshots/mobile-view.png)

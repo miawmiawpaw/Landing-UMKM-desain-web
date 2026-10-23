@@ -9,6 +9,7 @@ Format mengikuti Keep a Changelog, penomoran versi mengikuti Semantic Versioning
 - Aset gambar nyata pada `assets/images/`: `hero.jpg`, `before-1.jpg`, `after-1.jpg`, `before-2.jpg`, `after-2.jpg`.
 - Bagian statistik metrik (100+ pasang dirawat, 24 jam pengerjaan, 95% kepuasan) di bawah galeri Before-After.
 - Ikon SVG spesifik untuk fitur (deep cleaning, sabun ramah lingkungan, pickup) dan footer (Instagram, TikTok, WhatsApp).
+- Tangkapan layar pengujian multi-viewport (Desktop, Tablet, Mobile) pada `docs/screenshots/` dan disematkan ke `docs/testing.md`.
 
 ### Removed
 - Label/badge seksi kawat (*wireframe badges*: "Bagian 1: Navbar", "Bagian 2: Pembuka", dst) dari HTML dan CSS untuk tampilan produksi bersih.
@@ -32,6 +33,7 @@ Format mengikuti Keep a Changelog, penomoran versi mengikuti Semantic Versioning
 - Ditambahkan `scroll-padding-top: 100px` agar sticky header tidak menutupi judul seksi saat anchor link diklik.
 - Dokumentasi spesifikasi `docs/requirement.md` disinkronkan: urutan navigasi resmi menjadi Keunggulan, Layanan, Galeri, Kontak, dan palet warna resmi diperbarui ke Earth Green & Terracotta.
 - Seluruh hasil pengujian fungsional dan nonfungsional (responsivitas 320px–1200px, aset, CTA, CSS) dieksekusi dan dicatat di `docs/testing.md` dengan status Lulus.
+- Dokumentasi utama `README.md` dirapikan secara lengkap: deskripsi proyek, preview gambar, daftar fitur, palet warna, struktur direktori, cara menjalankan server, dan info kelompok.
 
 ## [0.1.0] - 2026-10-14
 
