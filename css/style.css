@@ -1,34 +1,50 @@
 /* =========================================================
    KlinShoes - Landing Page Style
-   Pendekatan: Mobile-First, Flexbox dan CSS Grid
+   Desain: Palette Warm Earthy Green & Terracotta
+   Pendekatan: Mobile-First, Flexbox & CSS Grid
    ========================================================= */
 
-/* ---------- Variabel Warna ---------- */
+/* ---------- Variabel Warna & Properti Global ---------- */
 :root {
-  --primary: #0077B6;
-  --bg: #FFFFFF;
-  --bg-alt: #F0F4F8;
-  --text: #333333;
+  --bg-hero: #FAF7F0;
+  --bg-section: #E8F0E4;
+  --bg-card: #FFFFFF;
+  --bg-footer: #4F7F5B;
+  --text-main: #1F2D24;
+  --text-muted: #5A6E60;
+  --text-light: #6B7A72;
   --text-invert: #FFFFFF;
+  --primary: #4F7F5B;
+  --primary-hover: #3E6647;
+  --price: #D9825B;
+  --border-subtle: #D0D7CF;
+  --radius-card: 16px;
+  --radius-btn: 8px;
 }
 
-/* ---------- Reset Dasar ---------- */
+/* ---------- Reset Dasar & Aksesibilitas ---------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
-  font-family: "Inter", system-ui, sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--text-main);
+  background: var(--bg-hero);
   overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: "Poppins", system-ui, sans-serif;
+  color: var(--text-main);
   line-height: 1.25;
 }
 
@@ -41,7 +57,7 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 ul {
@@ -52,74 +68,87 @@ address {
   font-style: normal;
 }
 
-/* ---------- Kontainer dan Section ---------- */
+/* ---------- Kontainer dan Section Dasar ---------- */
 .container {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
 section {
-  padding: 48px 0;
+  padding: 36px 0;
 }
 
 section h2 {
   font-size: 1.5rem;
-  margin-bottom: 24px;
-  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 /* ---------- Tombol ---------- */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 500;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .btn-primary {
   background: var(--primary);
   color: var(--text-invert);
+  border: 1px solid transparent;
+  width: 100%;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.35);
+  background: var(--primary-hover);
+  box-shadow: 0 4px 14px rgba(79, 127, 91, 0.28);
 }
 
 .btn-outline {
-  border: 2px solid var(--primary);
+  border: 1.5px solid var(--border-subtle);
   color: var(--primary);
+  background: transparent;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  align-self: flex-start;
 }
 
 .btn-outline:hover {
+  border-color: var(--primary);
   background: var(--primary);
   color: var(--text-invert);
 }
 
-/* ---------- Header ---------- */
+/* ---------- Bagian 1: Header (Mobile-First: Stacked) ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: var(--bg-hero);
+  border-bottom: 1px solid rgba(31, 45, 36, 0.08);
+  padding: 10px 0 12px;
 }
 
 .header-inner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .logo {
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--primary);
+  font-size: 1.35rem;
+  color: var(--text-main);
 }
 
 .main-nav ul {
@@ -128,13 +157,21 @@ section h2 {
   gap: 16px;
 }
 
+.main-nav a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
 .main-nav a:hover {
   color: var(--primary);
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Bagian 2: Hero ---------- */
 .hero {
-  background: var(--bg-alt);
+  background: var(--bg-hero);
+  padding-top: 16px;
+  padding-bottom: 40px;
 }
 
 .hero-inner {
@@ -144,144 +181,386 @@ section h2 {
 }
 
 .hero-text h1 {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
+  font-weight: 700;
   margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
 .hero-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* ---------- Grid Umum (Keunggulan, Layanan, Galeri) ---------- */
-.feature-grid,
-.service-grid,
-.gallery-grid {
+.hero-media img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(31, 45, 36, 0.08);
+}
+
+/* ---------- Bagian 3: Keunggulan ---------- */
+.features {
+  background: var(--bg-section);
+}
+
+.feature-grid {
   display: grid;
-  gap: 20px;
   grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.feature-card,
-.service-card,
-.gallery-item {
-  background: var(--bg-alt);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.feature-card,
-.service-card {
-  padding: 24px;
-}
-
-/* ---------- Keunggulan ---------- */
 .feature-card {
-  text-align: center;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(31, 45, 36, 0.04);
 }
 
 .feature-icon {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-section);
   color: var(--primary);
-}
-
-.feature-icon svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
 .feature-card h3 {
   font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
-/* ---------- Layanan ---------- */
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ---------- Bagian 4: Layanan dan Harga ---------- */
 .services {
-  background: var(--bg-alt);
+  background: var(--bg-section);
+  padding-top: 12px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .service-card {
-  background: var(--bg);
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(31, 45, 36, 0.04);
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .service-card .price {
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--primary);
-  margin-top: auto;
+  font-size: 1.45rem;
+  color: var(--price);
 }
 
-/* ---------- Galeri ---------- */
-.gallery-grid {
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 8px;
+  flex-grow: 1;
+}
+
+/* ---------- Bagian 5: Galeri & Statistik (Mobile: 2 Kolom Galeri, 3 Kolom Metrik) ---------- */
+.gallery {
+  background: var(--bg-section);
+  padding-top: 12px;
+  padding-bottom: 48px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-pair {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
-.gallery-item img {
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.gallery-img-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #E0E8DC;
+}
+
+.gallery-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1224 / 416;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.gallery-item figcaption {
-  padding: 8px;
-  font-size: 0.875rem;
-  text-align: center;
+.gallery-card:hover img {
+  transform: scale(1.02);
 }
 
-/* ---------- Footer ---------- */
+.gallery-card figcaption {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.stats-disclaimer {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 24px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 2px 8px rgba(31, 45, 36, 0.04);
+  text-align: left;
+}
+
+.stat-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.stat-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+}
+
+/* ---------- Bagian 6: Footer (Mobile: 2 Kolom Side-by-Side) ---------- */
 .site-footer {
-  background: var(--primary);
+  background: var(--bg-footer);
   color: var(--text-invert);
-  padding: 40px 0 16px;
+  padding: 36px 0 20px;
 }
 
 .footer-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  margin-top: 6px;
+  margin-bottom: 24px;
 }
 
 .footer-col h3 {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-invert);
+  margin-bottom: 8px;
+}
+
+address {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
 }
 
 .social-list a:hover {
-  text-decoration: underline;
+  color: var(--text-invert);
+}
+
+.social-list svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
 }
 
 .copyright {
-  text-align: center;
-  font-size: 0.875rem;
-  margin-top: 24px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* =========================================================
-   Media Queries
+   Media Queries (Desktop & Layar Lebar)
    ========================================================= */
 
 @media (min-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .gallery-pair {
+    gap: 16px;
+  }
+
+  .gallery-img-wrapper {
+    border-radius: 14px;
+  }
+
+  .gallery-tag {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .gallery-card figcaption {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  .stats-grid {
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-desc {
+    font-size: 0.825rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav ul {
+    gap: 28px;
+  }
+
+  .main-nav a {
+    font-size: 0.925rem;
+  }
+
+  .btn-primary {
+    width: auto;
+  }
+
   .feature-grid,
   .service-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .stats-grid {
+    gap: 24px;
+  }
+
+  .stat-card {
+    padding: 22px 24px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-desc {
+    font-size: 0.875rem;
   }
 
   .footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  address {
+    font-size: 0.925rem;
+    line-height: 1.7;
+  }
+
+  .social-list {
+    gap: 10px;
+  }
+
+  .social-list a {
+    gap: 8px;
+    font-size: 0.925rem;
+  }
+
+  .social-list svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -291,20 +570,33 @@ section h2 {
   }
 
   section h2 {
-    font-size: 1.875rem;
+    font-size: 2rem;
+  }
+
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 64px;
   }
 
   .hero-inner {
     flex-direction: row;
     align-items: center;
+    gap: 48px;
   }
 
-  .hero-text,
+  .hero-text {
+    flex: 1.1;
+  }
+
   .hero-media {
-    flex: 1;
+    flex: 0.9;
   }
 
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+  }
+
+  .main-nav ul {
+    gap: 32px;
   }
 }

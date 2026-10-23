@@ -19,7 +19,7 @@ KlinShoes adalah UMKM yang bergerak di bidang jasa perawatan dan pencucian sepat
 
 ### 1.3. Kebutuhan Fungsional
 Kebutuhan fungsional mendefinisikan interaksi dan fitur spesifik yang harus ada pada sistem:
-1.  **Navigasi Halaman:** Sistem harus menyediakan menu navigasi yang dapat diklik untuk melompat (*scroll*) langsung ke bagian spesifik pada halaman yang sama (Beranda, Layanan, Galeri, Kontak).
+1.  **Navigasi Halaman:** Sistem harus menyediakan menu navigasi yang dapat diklik untuk melompat (*scroll*) langsung ke bagian spesifik pada halaman yang sama (Keunggulan, Layanan, Galeri, Kontak).
 2.  **Katalog Layanan & Harga:** Sistem harus menampilkan minimal 3 daftar layanan utama beserta deskripsi singkat dan estimasi harganya.
 3.  **Galeri Portofolio:** Sistem harus menampilkan komparasi gambar sepatu kotor (sebelum) dan bersih (sesudah) dalam format *grid* atau daftar.
 4.  **Integrasi Komunikasi (CTA):** Sistem harus memiliki tombol "Cuci Sekarang" atau "Hubungi Kami" yang menggunakan tautan format `wa.me` dengan pesan otomatis (contoh: *"Halo KlinShoes, saya ingin cuci sepatu..."*).
@@ -40,17 +40,19 @@ Kebutuhan nonfungsional mendefinisikan kualitas, performa, dan batasan teknis si
 4.  **Panduan Visual (UI/UX):**
     *   **Tipografi:** Menggunakan Google Fonts *Sans-Serif* agar modern dan mudah dibaca (Rekomendasi: `Poppins` untuk *Heading*, `Open Sans` atau `Inter` untuk *Body Text*).
     *   **Palet Warna:**
-        *   *Primary Color* (Aksen & CTA): Biru Laut (`#0077B6`)
-        *   *Background Utama*: Putih Bersih (`#FFFFFF`)
-        *   *Background Sekunder* (Selang-seling seksi): Abu-abu Terang (`#F0F4F8`)
-        *   *Teks Utama*: Hitam Keabuan (`#333333`)
-    *   **Interaksi:** Harus ada *hover effect* (perubahan warna/bayangan) pada tombol dan tautan menggunakan CSS `transition` untuk memberikan umpan balik visual kepada pengguna.
+        *   *Primary Color* (Aksen, Tombol CTA & Footer): Forest Green (`#4F7F5B`)
+        *   *Background Hero & Navbar*: Warm Cream (`#FAF7F0`)
+        *   *Background Konten Utama* (Seksi Keunggulan, Layanan, Galeri): Sage Green Muda (`#E8F0E4`)
+        *   *Background Kartu*: Putih Bersih (`#FFFFFF`)
+        *   *Aksen Harga*: Terracotta (`#D9825B`)
+        *   *Teks Utama*: Deep Forest Charcoal (`#1F2D24`)
+        *   *Teks Sekunder*: Muted Green (`#5A6E60`)
 
 ### 1.5. Kriteria Penerimaan (Acceptance Criteria)
 Website dinyatakan selesai dan memenuhi syarat apabila:
 *   [ ] Halaman lolos validasi HTML5 W3C tanpa *error* fatal.
 *   [ ] Saat dibuka di layar HP dengan lebar 320px - 480px, tidak ada elemen yang terpotong ke samping.
-*   [ ] Tombol navigasi (Beranda, Layanan, dll) berfungsi dan mengarahkan pengguna ke bagian yang tepat di halaman tersebut.
+*   [x] Tombol navigasi (Keunggulan, Layanan, Galeri, Kontak) berfungsi dan mengarahkan pengguna ke bagian yang tepat di halaman tersebut.
 *   [ ] Mengklik tombol CTA WhatsApp langsung membuka aplikasi/web WhatsApp dengan pesan bawaan (*pre-filled message*).
 *   [ ] Seluruh tata letak dan gaya dirender murni dari file `.css` eksternal.
 
@@ -63,7 +65,7 @@ Website dirancang dengan model *Single Page Application* (SPA) / Landing Page. B
 ### Bagian 1: Header & Navigasi (*Navbar*)
 *   **Posisi:** Tetap di bagian paling atas layar (*Sticky Header* menggunakan CSS).
 *   **Konten Kiri:** Logo "KlinShoes" (Teks atau Gambar).
-*   **Konten Kanan (Menu):** Tautan ke `[Layanan]`, `[Keunggulan]`, `[Galeri]`, `[Kontak]`.
+*   **Konten Kanan (Menu):** Tautan ke `[Keunggulan]`, `[Layanan]`, `[Galeri]`, `[Kontak]`.
 *   **Layout Mobile:** Karena tanpa JS, menu di mobile akan ditampilkan berjejer secara rapi (menggunakan Flexbox `flex-wrap` atau ditata di bawah logo).
 
 ### Bagian 2: Beranda (*Hero Section*)
@@ -71,7 +73,7 @@ Website dirancang dengan model *Single Page Application* (SPA) / Landing Page. B
 *   **Copywriting:** 
     *   *Headline (H1):* "Sepatu Kotor Jadi Seperti Baru Lagi."
     *   *Sub-headline (p):* "Layanan perawatan sepatu profesional di Depok. Cepat, bersih, dan wangi."
-*   **CTA Utama:** Tombol besar berwarna biru laut bertuliskan **"Konsultasi & Cuci Sekarang ➔"**.
+*   **CTA Utama:** Tombol berwarna forest green bertuliskan **"Cuci Sekarang ➔"**.
 
 ### Bagian 3: Pengenalan Usaha (*Keunggulan / Why Us*)
 *   **Judul Seksi (H2):** "Kenapa Memilih KlinShoes?"
@@ -81,7 +83,7 @@ Website dirancang dengan model *Single Page Application* (SPA) / Landing Page. B
     3.  *Free Pickup:* Gratis antar-jemput untuk wilayah Depok (S&K berlaku).
 
 ### Bagian 4: Katalog Layanan & Harga (*Services*)
-*   **Latar Belakang:** Abu-abu Terang (`#F0F4F8`) untuk membedakan dengan bagian atasnya.
+*   **Latar Belakang:** Sage Green Muda (`#E8F0E4`).
 *   **Judul Seksi (H2):** "Layanan & Harga"
 *   **Konten (Peta Harga):** Direpresentasikan dalam bentuk *Card* (Kartu).
     *   **Kartu 1:** Fast Clean (Pembersihan luar midsole & upper) – Rp 35.000
@@ -89,12 +91,14 @@ Website dirancang dengan model *Single Page Application* (SPA) / Landing Page. B
     *   **Kartu 3:** Unyellowing (Mengembalikan warna putih sole yang menguning) – Rp 65.000
 *   **Aksi tambahan:** Tombol CTA kecil di setiap kartu bertuliskan "Pilih Paket".
 
-### Bagian 5: Galeri Portofolio (*Before - After*)
+### Bagian 5: Galeri Portofolio & Statistik (*Before - After & Stats*)
+*   **Latar Belakang:** Sage Green Muda (`#E8F0E4`).
 *   **Judul Seksi (H2):** "Bukti Kualitas Kami"
-*   **Konten:** *Grid* (kisi-kisi) foto yang menampilkan minimal 4 pasang foto perbandingan sepatu sebelum dicuci dan sesudah dicuci oleh KlinShoes. Menggunakan CSS Grid untuk menata kolom gambar.
+*   **Konten Galeri:** Menampilkan foto perbandingan Before-After dalam 2 baris (Perawatan bagian luar dan Perawatan sol sepatu).
+*   **Konten Statistik:** Menampilkan 3 kartu metrik ringkasan (100+ pasang dirawat, 24 jam pengerjaan, 95% pelanggan puas).
 
 ### Bagian 6: Kontak & Lokasi (*Footer*)
-*   **Latar Belakang:** Biru Laut (`#0077B6`) dengan teks Putih (`#FFFFFF`).
-*   **Kolom 1 (Info):** Alamat lengkap (Misal: Jl. Margonda Raya No. X, Depok), Jam Operasional (Senin-Sabtu, 09.00 - 18.00).
+*   **Latar Belakang:** Forest Green (`#4F7F5B`) dengan teks Putih (`#FFFFFF`).
+*   **Kolom 1 (Info):** Alamat lengkap (Depok, Indonesia), Jam Operasional.
 *   **Kolom 2 (Sosial):** Tautan ikon Instagram, TikTok, dan nomor WhatsApp.
 *   **Bawah (*Copyright*):** `© 2026 KlinShoes. All rights reserved.`
